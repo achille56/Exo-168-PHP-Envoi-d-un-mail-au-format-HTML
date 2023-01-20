@@ -8,20 +8,44 @@
  */
 
 $to = [
-    'j.conan@fondationface.org',
-    ...
+    'leclercqjm59@outlook.fr',
 ];
+
+$subject = "Les jeux de l'année 2023";
 
 $html = '
     <html lang="fr">
         <head>
-            <title>Mes actualités</title>
+            <title>Les Jeux pour 2023</title>
         </head>
         <body>
             <div>
                 <!-- Vos actualités ici -->
+                <p>Liste des jeux</p>
+                <ul>
+                    <li>League of legende 2</li>
+                    <li>Diablo 4</li>
+                    <li>Fifa 2024</li>
+                    <li>Projet Staro</li>
+                </ul>
             </div>
         </body>
     </html>
 ';
+$headers = array(
+    "Reply-To" => "leclercqjm59@gmail.com",
+    "X-Mailer" => "PHP/" . phpversion(),
+    "Mime-Version" => "1.0",
+    "Content-type" => "text/html; charset=utf-8"
+);
+
+$send = mail("leclercqjm59@outlook.fr", "coucou", $html);
+if (!$send) {
+    echo "Une erreur est survenue lors de l'envoi du mail";
+}
+else {
+    echo "Le message a bien été envoyé";
+}
+
+
 
